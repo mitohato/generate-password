@@ -8,8 +8,8 @@ int main()
 {
   int n;
 
+  srand((unsigned)time(NULL));
   while (cin >> n, n){
-    srand((unsigned)time(NULL));
 
     while (n){
       char c = rand() / 'z';
