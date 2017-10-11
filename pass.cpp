@@ -1,23 +1,21 @@
 #include <iostream>
-#include <ctime>
-#include <cstdio>
-#include <cstdlib>
-using namespace std;
+#include <random>
 
 int main()
 {
   int n;
 
-  srand((unsigned)time(NULL));
-  while (cin >> n, n){
-
+  std::random_device rnd;
+  std::mt19937 mer(rnd());
+  std::uniform_int_distribution<> randc('A', 'z');
+  while (std::cin >> n, n){
     while (n){
-      char c = rand() / 'z';
+      char c = randc(mer);
       if (('0' <= c && c <= '9') || ('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z')){
-        cout << c;
+        std::cout << c;
         n--;
       }
     }
-    cout << endl;
+    std::cout << std::endl;
   }
 }
