@@ -25,4 +25,5 @@ int main()
     std::cout << std::endl;
     writing_file << std::endl;
   }
+  writing_file.close();
 }
